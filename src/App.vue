@@ -5,6 +5,9 @@
 </template>
 
 <style lang="less">
+body {
+  padding: 84px 185px 150px 216px;
+}
 * {
   margin: 0;
   padding: 0;
