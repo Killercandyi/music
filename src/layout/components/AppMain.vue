@@ -1,28 +1,17 @@
 <template>
-  <div class="home">
     <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-container>
-          <el-main>Main</el-main>
-        </el-container>
-      </el-container>
-          <el-footer>Footer</el-footer>
+        <el-main>Main</el-main>
     </el-container>
-  </div>
 </template>
 
 <script>
-
 export default {
-  components: {
-  }
+
 }
 </script>
 
 <style lang="less" scoped>
-  .el-header, .el-footer {
+ .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
     // text-align: center;
@@ -55,4 +44,8 @@ export default {
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+</style>
+
+<style>
+
 </style>
