@@ -10,4 +10,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+i,b {
+  font-style: normal;
+}
 </style>
