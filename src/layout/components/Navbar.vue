@@ -21,8 +21,8 @@
           <i slot="end" class="el-input__icon el-icon-search" />
         </el-input>
         <div class="user">
-          <img src="@/assets/avatar.jpg" class="avatar" />
-          <span class="loginInfo"
+          <img src="@/assets/avatar.jpg" class="avatar" @click="showDialog = true"  />
+          <span class="loginInfo" @click="showDialog = true"
             >未登录
             <i class="el-icon-caret-bottom"></i>
           </span>
@@ -38,13 +38,24 @@
           <span class="iconfont icon-zuidahua" title="最大化" />
           <span class="iconfont icon-guanbi" title="关闭" />
         </div>
+        <login :dialogVisible.sync="showDialog" />
       </el-header>
     </el-container>
   </div>
 </template>
 
 <script>
-export default {}
+import login from '@/views/login'
+export default {
+  data () {
+    return {
+      showDialog: false // 登录弹窗
+    }
+  },
+  components: {
+    login
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -52,9 +63,13 @@ export default {}
   display: flex;
   align-items: center;
   overflow: hidden;
+    background-color: #d43c33;
+  color: #333;
+
   .logo {
     width: 197px;
     height: 39px;
+    margin-left: 15px;
     .img-logo {
       object-fit: cover;
     }
@@ -84,7 +99,7 @@ export default {}
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 285px;
+    margin-left: 265px;
     color: #eec1c1;
     font-size: 13px;
 
@@ -200,16 +215,14 @@ export default {}
     }
   }
 }
+
+/deep/ .el-input__icon {
+  line-height: 30px;
+}
 </style>
 
 <style>
-.el-header {
-  background-color: #d43c33;
-  color: #333;
-  line-height: 60px;
-}
-
-.el-input__inner {
+ .search .el-input__inner {
   width: 100%;
   height: 30px;
   border-radius: 30px;
